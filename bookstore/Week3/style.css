@@ -1,0 +1,87 @@
+/* External CSS for Aurora Book Store */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fcfaf8;
+  color: #3a2a4d;
+  line-height: 1.5;
+}
+
+a {
+  color: #6a4b8c;
+  text-decoration: none;
+  font-weight: 700;
+}
+a:hover {
+  color: #d9b34a;
+  text-shadow: 0 0 6px #d9b34a;
+}
+
+/* Header */
+header {
+  background-color: #6a4b8c;
+  color: #f9f6f2;
+  padding: 36px 20px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(106, 75, 140, 0.3);
+  font-family: 'Georgia', serif;
+}
+
+.tagline {
+  font-style: italic;
+  font-size: 1.3em;
+  color: #d9b34a;
+}
+
+/* Navigation */
+nav {
+  background-color: #4a397b;
+  text-align: center;
+  padding: 14px 0;
+}
+
+nav a {
+  color: #f9f6f2;
+  text-decoration: none;
+  margin: 0 24px;
+  font-size: 1.15em;
+}
+
+nav a:hover {
+  color: #d9b34a;
+}
+
+/* Content Container */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+/* Welcome */
+.welcome {
+  text-align: center;
+}
+
+.welcome h2 {
+  font-size: 2.6rem;
+  color: #6a4b8c;
+}
+
+.welcome p {
+  font-size: 1.2rem;
+  color: #7b6a9d;
+}
+
+/* Footer */
+footer {
+  background-color: #f0e6d2;
+  color: #4a397b;
+  text-align: center;
+  padding: 20px;
+  border-top: 2px solid #d9b34a;
+  font-family: 'Georgia', serif;
+}
+
+
