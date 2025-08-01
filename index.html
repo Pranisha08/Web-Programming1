@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bookbazar - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --royal-blue: #11296B;
+      --poly-blue: #00509D;
+      --off-white: #EDEDED;
+      --mustard: #FFDB57;
+      --jonquil: #FFCB05;
+      --white: #ffffff;
+      --text-dark: #1C1C1C;
+      --text-medium: #666666;
+      --text-light: #999999;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--white);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background: var(--poly-blue);
+      color: var(--white);
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 80, 157, 0.1);
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    nav {
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--mustard);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: var(--off-white);
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--poly-blue);
+      margin-bottom: 1.5rem;
+      letter-spacing: -1px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-medium);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+
+    .cta-button {
+      background: var(--mustard);
+      color: var(--text-dark);
+      padding: 1rem 2.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .cta-button:hover {
+      background: var(--jonquil);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 219, 87, 0.3);
+    }
+
+    /* Books Section */
+    .books-section {
+      padding: 4rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .book-card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      border-left: 4px solid var(--poly-blue);
+    }
+
+    .book-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .book-content {
+      display: flex;
+      padding: 1.5rem;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .book-image {
+      flex-shrink: 0;
+      width: 120px;
+      height: 160px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .book-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .book-info {
+      flex: 1;
+    }
+
+    .book-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--royal-blue);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .book-author {
+      font-size: 1rem;
+      color: var(--text-medium);
+      margin-bottom: 1rem;
+    }
+
+    .book-price {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--poly-blue);
+      margin-bottom: 1rem;
+    }
+
+    .book-button {
+      background: var(--poly-blue);
+      color: var(--white);
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .book-button:hover {
+      background: var(--royal-blue);
+      transform: translateY(-1px);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--royal-blue);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+
+    footer p {
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      nav {
+        gap: 1.5rem;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .books-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .book-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .book-image {
+        width: 150px;
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Bookbazar</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#books">Books</a>
+      <a href="#categories">Categories</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Find Your Next Great Read</h1>
+    <p>Browse through handpicked Nepali and international books at the best prices, shipped right to your door.</p>
+    <a href="#books" class="cta-button">Explore Collection</a>
+  </section>
+
+  <section class="books-section" id="books">
+    <div class="books-grid">
+      <div class="book-card">
+        <div class="book-content">
+          <div class="book-image">
+            <img src="https://m.media-amazon.com/images/I/71XqqKTZz7L._UF894,1000_QL80_.jpg" alt="Harry Potter">
+          </div>
+          <div class="book-info">
+            <h3 class="book-title">Harry Potter and the Sorcerer's Stone</h3>
+            <p class="book-author">J.K. Rowling</p>
+            <div class="book-price">Rs. 799</div>
+            <a href="harry-potter.html" class="book-button">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-card">
+        <div class="book-content">
+          <div class="book-image">
+            <img src="https://grey.com.np/cdn/shop/products/book-cover-To-Kill-a-Mockingbird-many-1961.webp?v=1669894816" alt="To Kill a Mockingbird">
+          </div>
+          <div class="book-info">
+            <h3 class="book-title">To Kill a Mockingbird</h3>
+            <p class="book-author">Harper Lee</p>
+            <div class="book-price">Rs. 599</div>
+            <a href="to-kill-a-mockingbird.html" class="book-button">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-card">
+        <div class="book-content">
+          <div class="book-image">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0j7Sbqpr-Dhij4f1aoTvXxSryQno9HFNF3Y5szxSVnoGzp0x10O5ipNRRbw2ZmC5IqXI&usqp=CAU" alt="1984">
+          </div>
+          <div class="book-info">
+            <h3 class="book-title">1984</h3>
+            <p class="book-author">George Orwell</p>
+            <div class="book-price">Rs. 699</div>
+            <a href="#" class="book-button">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-card">
+        <div class="book-content">
+          <div class="book-image">
+            <img src="https://booksmandala.com/_next/image?url=https%3A%2F%2Fbooks.bizmandala.com%2Fmedia%2Fbooks%2F9789390183524%2Fimage_aRoOdnG.jpeg&w=3840&q=75" alt="The Great Gatsby">
+          </div>
+          <div class="book-info">
+            <h3 class="book-title">The Great Gatsby</h3>
+            <p class="book-author">F. Scott Fitzgerald</p>
+            <div class="book-price">Rs. 499</div>
+            <a href="#" class="book-button">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-card">
+        <div class="book-content">
+          <div class="book-image">
+            <img src="https://www.worldofbooks.com/cdn/shop/files/1853260002.jpg?v=1751435195" alt="Pride and Prejudice">
+          </div>
+          <div class="book-info">
+            <h3 class="book-title">Pride and Prejudice</h3>
+            <p class="book-author">Jane Austen</p>
+            <div class="book-price">Rs. 549</div>
+            <a href="#" class="book-button">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-card">
+        <div class="book-content">
+          <div class="book-image">
+            <img src="https://m.media-amazon.com/images/I/81M3H64b-LL.jpg" alt="The Psychology of Money">
+          </div>
+          <div class="book-info">
+            <h3 class="book-title">The Psychology of Money</h3>
+            <p class="book-author">Morgan Housel</p>
+            <div class="book-price">Rs. 899</div>
+            <a href="#" class="book-button">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Bookbazar. All rights reserved.</p>
+    <p>Balaju, Ring Road, KTM | Phone: (+977) 9860827043 | Email: bookbazar@gmail.com</p>
+  </footer>
+</body>
+</html>
