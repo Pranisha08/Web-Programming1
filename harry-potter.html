@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harry Potter Collection - Bookbazar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --royal-blue: #11296B;
+      --poly-blue: #00509D;
+      --off-white: #EDEDED;
+      --mustard: #FFDB57;
+      --jonquil: #FFCB05;
+      --white: #ffffff;
+      --text-dark: #1C1C1C;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--white);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    .navbar {
+      background: linear-gradient(135deg, var(--poly-blue) 0%, var(--royal-blue) 100%);
+      padding: 1.5rem 0;
+      box-shadow: 0 4px 15px rgba(0, 80, 157, 0.3);
+    }
+
+    .navbar-brand {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--white) !important;
+    }
+
+    .back-btn {
+      background-color: var(--white);
+      color: var(--poly-blue);
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: var(--mustard);
+      color: var(--royal-blue);
+      transform: translateY(-2px);
+    }
+
+    .book-detail-section {
+      padding: 4rem 0;
+      background: var(--white);
+    }
+
+    .book-detail-card {
+      background: var(--off-white);
+      border-radius: 20px;
+      padding: 3rem;
+      box-shadow: 0 15px 40px rgba(17, 41, 107, 0.1);
+      border-left: 6px solid var(--poly-blue);
+    }
+
+    .book-detail-image {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
+
+    .book-info h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--royal-blue);
+      margin-bottom: 1rem;
+    }
+
+    .book-author {
+      font-size: 1.3rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+
+    .book-price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--poly-blue);
+      margin-bottom: 2rem;
+    }
+
+    .book-description {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .quantity-section {
+      margin-bottom: 2rem;
+    }
+
+    .quantity-section label {
+      font-weight: 600;
+      color: var(--royal-blue);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .quantity-input {
+      width: 80px;
+      padding: 10px;
+      border: 2px solid var(--poly-blue);
+      border-radius: 10px;
+      font-size: 1.1rem;
+      text-align: center;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary-custom {
+      background: linear-gradient(45deg, var(--poly-blue), var(--royal-blue));
+      color: var(--white);
+      border: none;
+      padding: 15px 30px;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0, 80, 157, 0.3);
+    }
+
+    .btn-primary-custom:hover {
+      background: linear-gradient(45deg, var(--mustard), var(--jonquil));
+      color: var(--royal-blue);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(255, 219, 87, 0.4);
+    }
+
+    .btn-secondary-custom {
+      background-color: transparent;
+      color: var(--poly-blue);
+      border: 2px solid var(--poly-blue);
+      padding: 15px 30px;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary-custom:hover {
+      background-color: var(--poly-blue);
+      color: var(--white);
+    }
+
+    .footer {
+      background: linear-gradient(135deg, var(--royal-blue) 0%, var(--poly-blue) 100%);
+      color: var(--white);
+      padding: 2rem 0;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      .book-detail-card {
+        padding: 2rem;
+      }
+
+      .book-info h1 {
+        font-size: 2rem;
+      }
+
+      .action-buttons {
+        flex-direction: column;
+      }
+
+      .btn-primary-custom,
+      .btn-secondary-custom {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Bookbazar</a>
+      <a href="index.html" class="back-btn">← Back to Home</a>
+    </div>
+  </nav>
+
+  <section class="book-detail-section">
+    <div class="container">
+      <div class="book-detail-card">
+        <div class="row">
+          <div class="col-lg-5 text-center">
+            <img src="https://m.media-amazon.com/images/I/71XqqKTZz7L._UF894,1000_QL80_.jpg" alt="Harry Potter Collection" class="book-detail-image">
+          </div>
+          <div class="col-lg-7">
+            <div class="book-info">
+              <h1>Harry Potter Collection</h1>
+              <p class="book-author">by J.K. Rowling</p>
+              <div class="book-price">Rs. 1299</div>
+              <p class="book-description">
+                The complete magical journey of Harry Potter. Follow the young wizard through his adventures at Hogwarts 
+                School of Witchcraft and Wizardry in this beloved fantasy series. This collection includes all seven books 
+                that captivated readers worldwide.
+              </p>
+              
+              <div class="quantity-section">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" class="quantity-input" value="1" min="1" max="10">
+              </div>
+
+              <div class="action-buttons">
+                <button class="btn btn-primary-custom" onclick="addToCart()">Add to Cart</button>
+                <button class="btn btn-secondary-custom" onclick="buyNow()">Buy Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Bookbazar | Your Reading Partner in Nepal</p>
+      <p>Kathmandu, Nepal | Phone: +977-01-4567890 | Email: info@bookbazar.com</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function addToCart() {
+      const quantity = document.getElementById('quantity').value;
+      const total = 1299 * quantity;
+      
+      let cart = JSON.parse(localStorage.getItem('bookbazar_cart')) || [];
+      
+      const existingItem = cart.find(item => item.title === 'Harry Potter Collection');
+      
+      if (existingItem) {
+        existingItem.quantity += parseInt(quantity);
+      } else {
+        cart.push({
+          title: 'Harry Potter Collection',
+          author: 'J.K. Rowling',
+          price: 1299,
+          quantity: parseInt(quantity),
+          image: 'https://m.media-amazon.com/images/I/71XqqKTZz7L._UF894,1000_QL80_.jpg'
+        });
+      }
+      
+      localStorage.setItem('bookbazar_cart', JSON.stringify(cart));
+      
+      alert(`✅ Added ${quantity} copy(ies) of "Harry Potter Collection" to your cart!\nTotal: Rs. ${total}`);
+    }
+
+    function buyNow() {
+      const quantity = document.getElementById('quantity').value;
+      const total = 1299 * quantity;
+      
+      const confirmation = confirm(
+        `📚 Order Summary:\n\nBook: Harry Potter Collection\nAuthor: J.K. Rowling\nQuantity: ${quantity}\nTotal: Rs. ${total}\n\nProceed with order?`
+      );
+      
+      if (confirmation) {
+        alert(`🎉 Thank you for your order!\n\n"Harry Potter Collection" (${quantity} copies)\nTotal: Rs. ${total}\n\nWe'll contact you soon for delivery details.`);
+        document.getElementById('quantity').value = 1;
+      }
+    }
+  </script>
+</body>
+</html>
