@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Details - Bookbazar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --royal-blue: #11296B;
+      --poly-blue: #00509D;
+      --off-white: #EDEDED;
+      --mustard: #FFDB57;
+      --jonquil: #FFCB05;
+      --white: #ffffff;
+      --text-dark: #1C1C1C;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--white);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* Header */
+    .navbar {
+      background-color: var(--poly-blue);
+      padding: 1.5rem 0;
+      box-shadow: 0 4px 15px rgba(0, 80, 157, 0.3);
+    }
+
+    .navbar-brand {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--white) !important;
+    }
+
+    .back-btn {
+      background-color: var(--white);
+      color: var(--poly-blue);
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: var(--mustard);
+      color: var(--royal-blue);
+      transform: translateY(-2px);
+    }
+
+    /* Book Detail Section */
+    .book-detail-section {
+      padding: 4rem 0;
+      background: var(--white);
+    }
+
+    .book-detail-card {
+      background: var(--off-white);
+      border-radius: 20px;
+      padding: 3rem;
+      box-shadow: 0 15px 40px rgba(17, 41, 107, 0.1);
+      border-left: 6px solid var(--poly-blue);
+    }
+
+    .book-detail-image {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
+
+    .book-info h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--royal-blue);
+      margin-bottom: 1rem;
+    }
+
+    .book-author {
+      font-size: 1.3rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+
+    .book-price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--poly-blue);
+      margin-bottom: 2rem;
+    }
+
+    .book-description {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .quantity-section {
+      margin-bottom: 2rem;
+    }
+
+    .quantity-section label {
+      font-weight: 600;
+      color: var(--royal-blue);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .quantity-input {
+      width: 80px;
+      padding: 10px;
+      border: 2px solid var(--poly-blue);
+      border-radius: 10px;
+      font-size: 1.1rem;
+      text-align: center;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary-custom {
+      background: linear-gradient(45deg, var(--poly-blue), var(--royal-blue));
+      color: var(--white);
+      border: none;
+      padding: 15px 30px;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0, 80, 157, 0.3);
+    }
+
+    .btn-primary-custom:hover {
+      background: linear-gradient(45deg, var(--mustard), var(--jonquil));
+      color: var(--royal-blue);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(255, 219, 87, 0.4);
+    }
+
+    .btn-secondary-custom {
+      background-color: transparent;
+      color: var(--poly-blue);
+      border: 2px solid var(--poly-blue);
+      padding: 15px 30px;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary-custom:hover {
+      background-color: var(--poly-blue);
+      color: var(--white);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .book-detail-card {
+        padding: 2rem;
+      }
+
+      .book-info h1 {
+        font-size: 2rem;
+      }
+
+      .action-buttons {
+        flex-direction: column;
+      }
+
+      .btn-primary-custom,
+      .btn-secondary-custom {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Bookbazar</a>
+      <a href="index.html" class="back-btn">← Back to Home</a>
+    </div>
+  </nav>
+
+  <!-- Book Detail Section -->
+  <section class="book-detail-section">
+    <div class="container">
+      <div class="book-detail-card">
+        <div class="row">
+          <div class="col-lg-5 text-center">
+            <img id="bookImage" src="https://m.media-amazon.com/images/I/71g2ednj0JL.jpg" alt="Book Cover" class="book-detail-image">
+          </div>
+          <div class="col-lg-7">
+            <div class="book-info">
+              <h1 id="bookTitle">Rich Dad Poor Dad</h1>
+              <p class="book-author" id="bookAuthor">Robert Kiyosaki</p>
+              <div class="book-price" id="bookPrice">Rs. 899</div>
+              <p class="book-description" id="bookDescription">
+                This book will teach you what the rich teach their kids about money that the poor and middle class do not. 
+                You'll learn the difference between working for money and having your money work for you.
+              </p>
+              
+              <div class="quantity-section">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" class="quantity-input" value="1" min="1" max="10">
+              </div>
+
+              <div class="action-buttons">
+                <button class="btn btn-primary-custom" onclick="addToCart()">Add to Cart</button>
+                <button class="btn btn-secondary-custom" onclick="buyNow()">Buy Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Book data with images
+    const bookData = {
+      'rich-dad-poor-dad': {
+        title: 'Rich Dad Poor Dad',
+        author: 'Robert Kiyosaki',
+        price: 899,
+        image: 'https://m.media-amazon.com/images/I/71g2ednj0JL.jpg',
+        description: 'This book will teach you what the rich teach their kids about money that the poor and middle class do not. You\'ll learn the difference between working for money and having your money work for you.'
+      },
+      'psychology-of-money': {
+        title: 'The Psychology of Money',
+        author: 'Morgan Housel',
+        price: 750,
+        image: 'https://m.media-amazon.com/images/I/81M3H64b-LL.jpg',
+        description: 'Timeless lessons on wealth, greed, and happiness. This book explores the strange ways people think about money and teaches you how to make better sense of one of life\'s most important topics.'
+      },
+      'harry-potter': {
+        title: 'Harry Potter Collection',
+        author: 'J.K. Rowling',
+        price: 1299,
+        image: 'https://m.media-amazon.com/images/I/71XqqKTZz7L._UF894,1000_QL80_.jpg',
+        description: 'The complete magical journey of Harry Potter. Follow the young wizard through his adventures at Hogwarts School of Witchcraft and Wizardry in this beloved fantasy series.'
+      },
+      '1984': {
+        title: '1984',
+        author: 'George Orwell',
+        price: 699,
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0j7Sbqpr-Dhij4f1aoTvXxSryQno9HFNF3Y5szxSVnoGzp0x10O5ipNRRbw2ZmC5IqXI&usqp=CAU',
+        description: 'A dystopian masterpiece about totalitarianism, surveillance, and the power of language. This influential novel remains as relevant today as when it was first published.'
+      },
+      'great-gatsby': {
+        title: 'The Great Gatsby',
+        author: 'F. Scott Fitzgerald',
+        price: 599,
+        image: 'https://booksmandala.com/_next/image?url=https%3A%2F%2Fbooks.bizmandala.com%2Fmedia%2Fbooks%2F9789390183524%2Fimage_aRoOdnG.jpeg&w=3840&q=75',
+        description: 'A classic American novel set in the Jazz Age. Follow Nick Carraway as he tells the story of his neighbor Jay Gatsby and his obsession with the beautiful Daisy Buchanan.'
+      }
+    };
+
+    let currentBook = null;
+
+    // Load book details on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const bookKey = urlParams.get('book');
+      
+      if (bookKey && bookData[bookKey]) {
+        currentBook = bookData[bookKey];
+        loadBookDetails(currentBook);
+      } else {
+        // Try to get from localStorage (from index page)
+        const storedBook = localStorage.getItem('selectedBook');
+        if (storedBook) {
+          const parsed = JSON.parse(storedBook);
+          currentBook = {
+            title: parsed.title,
+            author: parsed.author,
+            price: parsed.price,
+            image: 'https://m.media-amazon.com/images/I/71g2ednj0JL.jpg', // Default image
+            description: 'A wonderful book that will enrich your reading experience.'
+          };
+          loadBookDetails(currentBook);
+        }
+      }
+    });
+
+    function loadBookDetails(book) {
+      document.getElementById('bookTitle').textContent = book.title;
+      document.getElementById('bookAuthor').textContent = book.author;
+      document.getElementById('bookPrice').textContent = `Rs. ${book.price}`;
+      document.getElementById('bookImage').src = book.image;
+      document.getElementById('bookImage').alt = book.title;
+      document.getElementById('bookDescription').textContent = book.description;
+      
+      // Update page title
+      document.title = `${book.title} - Bookbazar`;
+    }
+
+    function addToCart() {
+      if (!currentBook) return;
+      
+      const quantity = parseInt(document.getElementById('quantity').value);
+      const total = currentBook.price * quantity;
+      
+      // Get existing cart
+      let cart = JSON.parse(localStorage.getItem('bookbazar_cart')) || [];
+      
+      // Check if item already exists
+      const existingItem = cart.find(item => item.title === currentBook.title);
+      
+      if (existingItem) {
+        existingItem.quantity += quantity;
+      } else {
+        cart.push({
+          title: currentBook.title,
+          author: currentBook.author,
+          price: currentBook.price,
+          quantity: quantity,
+          image: currentBook.image
+        });
+      }
+      
+      localStorage.setItem('bookbazar_cart', JSON.stringify(cart));
+      
+      alert(`✅ Added ${quantity} copy(ies) of "${currentBook.title}" to your cart!\nTotal: Rs. ${total}`);
+    }
+
+    function buyNow() {
+      if (!currentBook) return;
+      
+      const quantity = parseInt(document.getElementById('quantity').value);
+      const total = currentBook.price * quantity;
+      
+      const confirmation = confirm(
+        `📚 Order Summary:\n\nBook: ${currentBook.title}\nAuthor: ${currentBook.author}\nQuantity: ${quantity}\nTotal: Rs. ${total}\n\nProceed with order?`
+      );
+      
+      if (confirmation) {
+        alert(`🎉 Thank you for your order!\n\n"${currentBook.title}" (${quantity} copies)\nTotal: Rs. ${total}\n\nWe'll contact you soon for delivery details.`);
+        
+        // Reset quantity
+        document.getElementById('quantity').value = 1;
+      }
+    }
+  </script>
+</body>
+</html>
